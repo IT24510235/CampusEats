@@ -1,4 +1,3 @@
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -22,8 +21,8 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.UseRouting();
 app.UseCors("Frontend");
-
 app.UseAuthorization();
 
 app.MapControllers();
