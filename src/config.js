@@ -1,3 +1,2 @@
-const API = import.meta.env.VITE_API_URL || "https://campuseats-dashboard-production.up.railway.app";
-
+const API = (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
 export default API;

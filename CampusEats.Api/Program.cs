@@ -4,11 +4,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Allow the deployed Vercel frontend
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>
     {
         policy.WithOrigins(
+            "https://campuseats-dashboard-lemon.vercel.app",
             "https://campuseats-dashboard-pi.vercel.app"
         )
         .AllowAnyHeader()
