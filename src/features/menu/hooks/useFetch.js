@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import API from "../../../config";
 
@@ -9,12 +8,15 @@ export function useFetch(url) {
 
     useEffect(() => {
         let active = true;
+
         setIsLoading(true);
         setError(null);
 
         fetch(`${API}${url}`)
             .then((res) => {
-                if (!res.ok) throw new Error("HTTP " + res.status);
+                if (!res.ok) {
+                    throw new Error("HTTP " + res.status);
+                }
                 return res.json();
             })
             .then((json) => {

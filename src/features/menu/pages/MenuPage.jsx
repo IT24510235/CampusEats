@@ -11,7 +11,7 @@ function MenuPage() {
   const debounced = useDebounce(query, 400);
 
 
-  const { data: dishes, isLoading, error } = useFetch("/menu.json");
+  const { data: dishes, isLoading, error } = useFetch("/api/menu");
 
 
   // Loading state
